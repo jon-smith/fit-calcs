@@ -3,6 +3,7 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/fit-calcs/',
   plugins: [
     react(),
     babel({
