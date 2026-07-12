@@ -1,4 +1,4 @@
-const upcomingCalculators = ["N-rep max", "Running pace conversionss"];
+const upcomingCalculators = ['N-rep max', 'Running pace conversionss'];
 
 function App() {
   return (
