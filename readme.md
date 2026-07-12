@@ -35,3 +35,11 @@ npm run preview
 
 GitHub Actions runs on pushes and pull requests. The workflow installs
 dependencies with `npm ci` and verifies the app with `npm run build`.
+
+## 🌐 Deployment
+
+Pushes to `main` deploy the app to GitHub Pages at:
+
+```txt
+https://jon-smith.github.io/fit-calcs/
+```
