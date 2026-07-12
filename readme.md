@@ -1,36 +1,37 @@
-# FitCalcs
+# FitCalcs 𐄷
 
-FitCalcs is an app with a variety of fitness calculators. Built with React, Vite and Typescript.
+FitCalcs is an app with a variety of fitness calculators. Built with React,
+Vite and Typescript.
 
-## Getting started
+## 🚀 Getting started
 
 Use Node.js `24.18.0`.
 
-Install dependencies:
+📦 Install dependencies:
 
 ```sh
 npm install
 ```
 
-Start the local development server:
+🛠️ Start the local development server:
 
 ```sh
 npm run dev
 ```
 
-Build for production:
+🏗️ Build for production:
 
 ```sh
 npm run build
 ```
 
-Preview the production build locally:
+🔍 Preview the production build locally:
 
 ```sh
 npm run preview
 ```
 
-## CI
+## ✅ CI
 
 GitHub Actions runs on pushes and pull requests. The workflow installs
 dependencies with `npm ci` and verifies the app with `npm run build`.
