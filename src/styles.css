@@ -32,10 +32,16 @@ select {
   font: inherit;
 }
 
+button,
+input,
+select {
+  color: inherit;
+}
+
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  align-items: center;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  align-items: start;
   gap: 32px;
   width: min(1100px, calc(100% - 40px));
   min-height: 100vh;
@@ -44,7 +50,8 @@ select {
 }
 
 .intro-panel,
-.roadmap-panel {
+.calculator-panel,
+.roadmap-strip {
   border: 1px solid #d7ded3;
   border-radius: 8px;
   background: #ffffff;
@@ -55,7 +62,8 @@ select {
   padding: clamp(32px, 6vw, 72px);
 }
 
-.roadmap-panel {
+.calculator-panel,
+.roadmap-strip {
   padding: 28px;
 }
 
@@ -70,6 +78,7 @@ select {
 
 h1,
 h2,
+h3,
 p {
   margin-top: 0;
 }
@@ -93,6 +102,176 @@ h2 {
   color: #4f5b53;
   font-size: 1.2rem;
   line-height: 1.65;
+}
+
+.panel-heading {
+  margin-bottom: 22px;
+}
+
+.panel-heading h2 {
+  margin-bottom: 0;
+}
+
+.calculator-controls {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  color: #344239;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  border: 1px solid #c7d2c2;
+  border-radius: 6px;
+  background: #fbfcfa;
+  padding: 12px 14px;
+  color: #101511;
+}
+
+.field input:focus,
+.field select:focus,
+.formula-options input:focus-visible + span {
+  outline: 3px solid rgb(77 140 98 / 24%);
+  outline-offset: 2px;
+  border-color: #4d8c62;
+}
+
+.formula-picker {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.formula-picker legend {
+  margin-bottom: 8px;
+  color: #344239;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.formula-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.formula-options label {
+  min-width: 0;
+}
+
+.formula-options input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formula-options span {
+  display: block;
+  border: 1px solid #c7d2c2;
+  border-radius: 6px;
+  background: #fbfcfa;
+  padding: 11px 12px;
+  text-align: center;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.formula-options input:checked + span {
+  border-color: #326b45;
+  background: #e3f0e5;
+  color: #17381f;
+}
+
+.validation-message {
+  margin: 16px 0 0;
+  border-left: 4px solid #ba6b24;
+  border-radius: 4px;
+  background: #fff4e8;
+  padding: 12px 14px;
+  color: #664019;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.results-wrap {
+  max-height: 440px;
+  margin-top: 22px;
+  overflow: auto;
+  border: 1px solid #d7ded3;
+  border-radius: 8px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table caption {
+  padding: 12px 14px;
+  background: #f1f6ee;
+  color: #4f5b53;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.results-table th,
+.results-table td {
+  border-top: 1px solid #e2e8df;
+  padding: 10px 14px;
+}
+
+.results-table th {
+  color: #243126;
+  text-align: left;
+}
+
+.results-table td {
+  text-align: right;
+  font-weight: 750;
+}
+
+.results-table thead th {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  color: #4f5b53;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.performed-row {
+  background: #eef7f0;
+}
+
+.current-reps {
+  display: inline-block;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: #326b45;
+  padding: 3px 7px;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.roadmap-strip {
+  grid-column: 2;
+}
+
+.roadmap-strip h2 {
+  font-size: 1rem;
 }
 
 ul {
@@ -122,11 +301,37 @@ li {
   }
 
   .intro-panel,
-  .roadmap-panel {
+  .calculator-panel,
+  .roadmap-strip {
     padding: 24px;
+  }
+
+  .roadmap-strip {
+    grid-column: auto;
   }
 
   .lede {
     font-size: 1rem;
+  }
+
+  .results-wrap {
+    max-height: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .formula-options {
+    grid-template-columns: 1fr;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 9px 10px;
+  }
+
+  .current-reps {
+    display: block;
+    width: fit-content;
+    margin: 5px 0 0;
   }
 }
