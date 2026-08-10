@@ -1,10 +1,12 @@
 import { NRepMaxCalculator } from './NRepMaxCalculator';
 import { Roadmap } from './Roadmap';
+import { RunningPaceCalculator } from './RunningPaceCalculator';
 
 export function App() {
   return (
     <main className="app-shell">
       <IntroPanel />
+      <RunningPaceCalculator />
       <NRepMaxCalculator />
       <Roadmap />
     </main>

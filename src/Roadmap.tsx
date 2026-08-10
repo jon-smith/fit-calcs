@@ -1,4 +1,4 @@
-const upcomingCalculators = ['Running pace conversions'];
+const upcomingCalculators = ['Heart Rate Zones', 'Hyrox Paces'];
 
 export function Roadmap() {
   return (
