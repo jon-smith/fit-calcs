@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { RunningResults } from './RunningResults';
-import * as pace from './runningPaceMath';
+import * as pace from './running-pace-math';
 
 export function RunningPaceCalculator() {
   const calculator = useRunningPaceCalculator();

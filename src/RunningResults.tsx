@@ -1,5 +1,5 @@
 import { ResultsTable } from './ResultsTable';
-import * as pace from './runningPaceMath';
+import * as pace from './running-pace-math';
 
 type RunningResultsProps = {
   equivalentRaces: pace.EquivalentRace[];
