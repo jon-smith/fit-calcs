@@ -38,6 +38,10 @@ select {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .app-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
@@ -311,6 +315,34 @@ h2 {
   color: #17381f;
   font-size: 2rem;
   line-height: 1;
+}
+
+.results-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.results-tabs button {
+  min-width: 0;
+  border: 1px solid #c7d2c2;
+  border-radius: 6px;
+  background: #fbfcfa;
+  padding: 11px 12px;
+  color: #243126;
+  font-weight: 750;
+}
+
+.results-tabs button:focus-visible {
+  outline: 3px solid rgb(77 140 98 / 24%);
+  outline-offset: 2px;
+  border-color: #4d8c62;
+}
+
+.results-tabs button[aria-selected='true'] {
+  border-color: #326b45;
+  background: #e3f0e5;
+  color: #17381f;
 }
 
 .results-table {
