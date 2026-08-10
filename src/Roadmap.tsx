@@ -1,6 +1,6 @@
 const upcomingCalculators = ['Running pace conversions'];
 
-function Roadmap() {
+export function Roadmap() {
   return (
     <section className="roadmap-strip" aria-labelledby="roadmap-title">
       <h2 id="roadmap-title">Coming next</h2>
@@ -12,5 +12,3 @@ function Roadmap() {
     </section>
   );
 }
-
-export default Roadmap;

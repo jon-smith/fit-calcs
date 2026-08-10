@@ -31,7 +31,7 @@ const formulas: Record<FormulaKey, Formula> = {
 
 const formulaKeys = Object.keys(formulas) as FormulaKey[];
 
-function NRepMaxCalculator() {
+export function NRepMaxCalculator() {
   const calculator = useRepMaxCalculator();
 
   return (
@@ -239,5 +239,3 @@ function ResultRow({
     </tr>
   );
 }
-
-export default NRepMaxCalculator;
