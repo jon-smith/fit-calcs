@@ -306,6 +306,10 @@ li {
     padding: 24px;
   }
 
+  .roadmap-strip {
+    grid-column: auto;
+  }
+
   .lede {
     font-size: 1rem;
   }
