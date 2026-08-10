@@ -44,13 +44,97 @@ button {
 
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-  align-items: start;
-  gap: 32px;
+  gap: 28px;
   width: min(1100px, calc(100% - 40px));
   min-height: 100vh;
   margin: 0 auto;
   padding: 56px 0;
+}
+
+.app-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid #d7ded3;
+  padding-bottom: 24px;
+}
+
+.app-header h1 {
+  margin-bottom: 0;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.app-nav-link,
+.primary-link {
+  border: 1px solid #c7d2c2;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #243126;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.app-nav-link {
+  padding: 10px 14px;
+}
+
+.primary-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 24px;
+  padding: 12px 16px;
+}
+
+.app-nav-link:hover,
+.app-nav-link[data-status='active'],
+.primary-link:hover {
+  border-color: #326b45;
+  background: #e3f0e5;
+  color: #17381f;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.calculator-links {
+  display: grid;
+  gap: 16px;
+}
+
+.calculator-link-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #d7ded3;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 24px;
+  color: #243126;
+  text-decoration: none;
+  box-shadow: 0 20px 50px rgb(33 48 37 / 10%);
+}
+
+.calculator-link-card:hover {
+  border-color: #4d8c62;
+}
+
+.calculator-link-card strong {
+  color: #101511;
+  font-size: 1.2rem;
+}
+
+.calculator-link-card span:last-child {
+  color: #4f5b53;
+  line-height: 1.5;
 }
 
 .intro-panel,
@@ -69,6 +153,12 @@ button {
 .calculator-panel,
 .roadmap-strip {
   padding: 28px;
+}
+
+.calculator-panel {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .eyebrow {
@@ -429,16 +519,25 @@ li {
 
 @media (max-width: 760px) {
   .app-shell {
-    grid-template-columns: 1fr;
-    align-content: center;
     width: min(100% - 28px, 620px);
     gap: 20px;
     padding: 24px 0;
   }
 
+  .app-header {
+    display: grid;
+    align-items: start;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .intro-panel,
   .calculator-panel,
-  .roadmap-strip {
+  .roadmap-strip,
+  .calculator-link-card {
     padding: 24px;
   }
 
