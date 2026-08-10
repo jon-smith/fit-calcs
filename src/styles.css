@@ -50,7 +50,8 @@ select {
 }
 
 .intro-panel,
-.calculator-panel {
+.calculator-panel,
+.roadmap-strip {
   border: 1px solid #d7ded3;
   border-radius: 8px;
   background: #ffffff;
@@ -61,7 +62,8 @@ select {
   padding: clamp(32px, 6vw, 72px);
 }
 
-.calculator-panel {
+.calculator-panel,
+.roadmap-strip {
   padding: 28px;
 }
 
@@ -265,9 +267,7 @@ h2 {
 }
 
 .roadmap-strip {
-  margin-top: 24px;
-  border-top: 1px solid #e2e8df;
-  padding-top: 22px;
+  grid-column: 2;
 }
 
 .roadmap-strip h2 {
@@ -301,7 +301,8 @@ li {
   }
 
   .intro-panel,
-  .calculator-panel {
+  .calculator-panel,
+  .roadmap-strip {
     padding: 24px;
   }
 

@@ -1,10 +1,12 @@
 import NRepMaxCalculator from './NRepMaxCalculator';
+import Roadmap from './Roadmap';
 
 function App() {
   return (
     <main className="app-shell">
       <IntroPanel />
       <NRepMaxCalculator />
+      <Roadmap />
     </main>
   );
 }

@@ -30,7 +30,6 @@ const formulas: Record<FormulaKey, Formula> = {
 };
 
 const formulaKeys = Object.keys(formulas) as FormulaKey[];
-const upcomingCalculators = ['Running pace conversions'];
 
 function NRepMaxCalculator() {
   const calculator = useRepMaxCalculator();
@@ -67,8 +66,6 @@ function NRepMaxCalculator() {
           performedReps={calculator.performedReps}
         />
       )}
-
-      <Roadmap />
     </section>
   );
 }
@@ -240,19 +237,6 @@ function ResultRow({
       </th>
       <td>{estimate.weight.toFixed(1)}</td>
     </tr>
-  );
-}
-
-function Roadmap() {
-  return (
-    <div className="roadmap-strip" aria-labelledby="roadmap-title">
-      <h2 id="roadmap-title">Coming next</h2>
-      <ul>
-        {upcomingCalculators.map((calculator) => (
-          <li key={calculator}>{calculator}</li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
